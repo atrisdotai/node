@@ -8,9 +8,8 @@ export class Collections extends Base {
      *
      * This endpoint requires an image upload, so the request should be in the form of a multipart/form-data request.
      *
-     * @param collectionId The base url
-     * @param _options The base fetch options
-     * @returns A fresh wretch instance
+     * @param object The collection object to create
+     * @returns The collection you created
      */
   
     async createCollection(object: CreateCollection) {
@@ -49,7 +48,7 @@ export class Collections extends Base {
     }
     /**
      * For a given collection, return a list of the Comet users and/or addresses who hold tokens in that collection.
-     * @returns A list of collections you've launched.
+     * @returns A list of collections specified user has launched.
      */
   
     async getCollectionsHolders(id: string) {
