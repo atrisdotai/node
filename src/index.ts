@@ -1,4 +1,5 @@
 import { Collections } from './collections';
+import { Airdrop } from './airdrop';
 import { CometConfig, FetchFunction } from './types/main';
 
 export class Comet {
@@ -21,7 +22,7 @@ export class Comet {
       });
 
     this.collections = new Collections(fetchFunction);
-    this.airdrops = new Airdrops(fetchFunction);
+    this.airdrops = new Airdrop(fetchFunction);
     this.gallery = new Gallery(fetchFunction);
     this.usage = new Usage(fetchFunction);
   }
