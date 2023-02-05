@@ -85,13 +85,9 @@ You can quickly distribute tokens from collections you've launched with Comet by
 
 After you've launched your airdrop, Comet will return an `id` that you can use to monitor the status of the airdrop.
 
-{% hint style="warning" %}
 Keep in mind that you cannot mint any collection past its `maxSupply`, when applicable. If you try to airdrop more NFTs from a collection than there are available tokens, some recipients won't receive the airdrop.
-{% endhint %}
 
-{% hint style="warning" %}
 Even if your NFT collection requires payment, recipients will receive your airdropped NFTs for free.
-{% endhint %}
 
 ```js
 // Create a static pass collection
