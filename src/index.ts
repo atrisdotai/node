@@ -6,9 +6,9 @@ import { CometConfig, FetchFunction } from './types/main';
 
 export class Comet {
   collections: Collections;
-  airdrops: any;
-  gallery: any;
-  usage: any;
+  airdrops: AirDrop;
+  gallery: Gallery;
+  usage: Usage;
 
   constructor(contents: CometConfig) {
     const parsed = CometConfig.safeParse(contents);
