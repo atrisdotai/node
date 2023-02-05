@@ -1,6 +1,7 @@
 import { Base } from '.';
 import { Collection, CreateCollection, GetCollections, Holders } from './types/collections';
 import { BasicErrorReponse } from './types/main';
+import { FormData } from 'undici';
 
 export class Collections extends Base {
   /**

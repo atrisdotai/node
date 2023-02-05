@@ -3,6 +3,7 @@ import { AirDrop } from './airdrop';
 import { Gallery } from './gallery';
 import { Usage } from './usage';
 import { CometConfig, FetchFunction } from './types/main';
+import { fetch, RequestInit } from 'undici';
 
 export class Comet {
   collections: Collections;

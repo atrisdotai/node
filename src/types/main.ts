@@ -1,4 +1,5 @@
 import { z } from 'zod';
+import type { RequestInit } from 'undici';
 
 export const CometConfig = z.object({
   version: z.string().default('v1'),

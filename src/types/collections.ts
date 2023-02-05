@@ -17,7 +17,7 @@ export interface Collection {
 }
 
 export interface CreateCollection {
-  backgroundUpload: Blob;
+  backgroundUpload: ReadableStream;
   name: string;
   symbol: string;
   description: string;

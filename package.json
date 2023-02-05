@@ -24,9 +24,12 @@
   "name": "comet-js",
   "author": "Nisarg Patel",
   "devDependencies": {
+    "@types/lodash": "^4.14.191",
     "typescript": "^4.9.5"
   },
   "dependencies": {
+    "lodash": "^4.17.21",
+    "undici": "^5.17.1",
     "zod": "^3.20.2"
   }
 }
