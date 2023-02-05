@@ -9,6 +9,13 @@ export const CometConfig = z.object({
   }),
 });
 
-export type CometConfig = z.infer<typeof CometConfig>;
+export type CometConfig = {
+  version?: string;
+  endpoint?: string;
+  token: string;
+};
 
-export type FetchFunction = (subUrl: string, args: RequestInit) => Promise<Response>;
+export type FetchFunction = (
+  subUrl: string,
+  args: RequestInit
+) => Promise<Response>;

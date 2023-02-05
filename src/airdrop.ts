@@ -13,7 +13,7 @@ export class AirDrop extends Base {
    * @returns The id of the airdrop and the count of users that will receive the airdrop
    */
 
-  async createAirdrop(users: AirdropCreateBody[]) {
+  async create(users: AirdropCreateBody[]) {
     const response = this.fetchFunction('/airdrop', {
       method: 'POST',
       body: JSON.stringify({
@@ -32,7 +32,7 @@ export class AirDrop extends Base {
    * @returns The id of the airdrop, the count of users that will receive the airdrop, and how many users have received the airdrop. This will also include the user address, CometUserId if exist, and taskId of the users that have received the airdrop.
    */
 
-  async getAirdrop(id: string) {
+  async get(id: string) {
     const response = this.fetchFunction(`/airdrop/${id}`, {
       method: 'GET',
     });

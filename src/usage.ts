@@ -8,7 +8,7 @@ export class Usage extends Base {
    * @returns A list of requests made to the API.
    */
 
-  async getUsage() {
+  async get() {
     const response = this.fetchFunction(`/usage`, {
       method: 'GET'
     });

@@ -12,7 +12,7 @@ export class Collections extends Base {
      * @returns The collection you created
      */
   
-    async createCollection(object: CreateCollection) {
+    async create(object: CreateCollection) {
       const formData = new FormData();
       for ( const key in object ) {
         formData.append(key, (<any> object)[key]);
@@ -29,7 +29,7 @@ export class Collections extends Base {
      * @returns A list of collections you've launched.
      */
   
-    async getCollections() {
+    async list() {
       const response = this.fetchFunction('/collections', {
         method: 'GET',
       });
@@ -40,7 +40,7 @@ export class Collections extends Base {
      * @returns A list of collections by ID
      */
   
-    async getCollectionsById(id: string) {
+    async getById(id: string) {
       const response = this.fetchFunction(`/collections/${id}`, {
         method: 'GET',
       });
@@ -51,7 +51,7 @@ export class Collections extends Base {
      * @returns A list of collections specified user has launched.
      */
   
-    async getCollectionsHolders(id: string) {
+    async getByHolders(id: string) {
       const response = this.fetchFunction(`/collections${id}/holders`, {
         method: 'GET',
       });

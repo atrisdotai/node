@@ -9,7 +9,7 @@ export class Gallery extends Base {
    * @returns A list of tokens owned by the user.
    */
 
-  async getGallery(indentifier: GalleryGetQuery) {
+  async get(indentifier: GalleryGetQuery) {
     const query = (key: string) => `?${key}=${(<any> indentifier)[key]}`;
 
     const response = this.fetchFunction(`/gallery`, {
