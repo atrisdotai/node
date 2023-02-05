@@ -13,19 +13,18 @@ export interface AirdropCreateResponse {
   count: number;
 }
 
-
 export interface AirdropGetResponse {
-  id: string
-  statuses: Statuses
-  count: number
+  id: string;
+  statuses: Statuses;
+  count: number;
 }
 
 export interface Statuses {
-  SUCCEEDED: Succeeded[]
+  SUCCEEDED: Succeeded[];
 }
 
 export interface Succeeded {
-  taskId: string
-  CometUserId?: string
-  address: string
+  taskId: string;
+  CometUserId?: string;
+  address: string;
 }

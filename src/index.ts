@@ -14,14 +14,18 @@ export class Comet {
     const parsed = CometConfig.safeParse(contents);
     if (!parsed.success) throw new Error(parsed.error.message);
 
-    const fetchFunction = (subUrl: string, args: RequestInit) =>
-      fetch(parsed.data.endpoint + subUrl, {
+    const fetchFunction = async <T, U>(subUrl: string, args: RequestInit) => {
+      const res = await fetch(parsed.data.endpoint + subUrl, {
         headers: {
           Authorization: `Bearer ${parsed.data.token}`,
           'Content-Type': 'application/json',
         },
         ...args,
       });
+      const json = await res.json();
+      if (res.status !== 200) return json as U;
+      return json as T;
+    };
 
     this.collections = new Collections(fetchFunction);
     this.airdrops = new AirDrop(fetchFunction);

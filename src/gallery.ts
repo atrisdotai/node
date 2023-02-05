@@ -1,5 +1,6 @@
 import { Base } from '.';
 import { GalleryGetQuery, GalleryGetResponse } from './types/gallery';
+import { BasicErrorReponse } from './types/main';
 
 export class Gallery extends Base {
   /**
@@ -10,11 +11,11 @@ export class Gallery extends Base {
    */
 
   async get(indentifier: GalleryGetQuery) {
-    const query = (key: string) => `?${key}=${(<any> indentifier)[key]}`;
+    const query = (key: string) => `?${key}=${(<any>indentifier)[key]}`;
 
-    const response = this.fetchFunction(`/gallery`, {
+    const response = this.fetchFunction<GalleryGetResponse, BasicErrorReponse>(`/gallery`, {
       method: 'GET' + query('address' in indentifier ? 'address' : 'user'),
     });
-    return (await response).json() as Promise<GalleryGetResponse>;
+    return response;
   }
 }

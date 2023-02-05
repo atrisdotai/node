@@ -1,4 +1,5 @@
 import { Base } from '.';
+import { BasicErrorReponse } from './types/main';
 import { UsageGetResponse } from './types/usage';
 
 export class Usage extends Base {
@@ -9,9 +10,9 @@ export class Usage extends Base {
    */
 
   async get() {
-    const response = this.fetchFunction(`/usage`, {
-      method: 'GET'
+    const response = this.fetchFunction<UsageGetResponse, BasicErrorReponse>(`/usage`, {
+      method: 'GET',
     });
-    return (await response).json() as Promise<UsageGetResponse>;
+    return response;
   }
 }

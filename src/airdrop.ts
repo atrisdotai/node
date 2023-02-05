@@ -1,9 +1,6 @@
 import { Base } from '.';
-import {
-  AirdropCreateBody,
-  AirdropGetResponse,
-  AirdropCreateResponse,
-} from './types/airdrop';
+import { AirdropCreateBody, AirdropGetResponse, AirdropCreateResponse } from './types/airdrop';
+import { BasicErrorReponse } from './types/main';
 
 export class AirDrop extends Base {
   /**
@@ -14,13 +11,13 @@ export class AirDrop extends Base {
    */
 
   async create(users: AirdropCreateBody[]) {
-    const response = this.fetchFunction('/airdrop', {
+    const response = this.fetchFunction<AirdropCreateResponse, BasicErrorReponse>('/airdrop', {
       method: 'POST',
       body: JSON.stringify({
         airdrops: users,
       }),
     });
-    return (await response).json() as Promise<AirdropCreateResponse>;
+    return response;
   }
 
   /**
@@ -33,9 +30,9 @@ export class AirDrop extends Base {
    */
 
   async get(id: string) {
-    const response = this.fetchFunction(`/airdrop/${id}`, {
+    const response = this.fetchFunction<AirdropGetResponse, BasicErrorReponse>(`/airdrop/${id}`, {
       method: 'GET',
     });
-    return (await response).json() as Promise<AirdropGetResponse>;
+    return response;
   }
 }

@@ -15,7 +15,8 @@ export type CometConfig = {
   token: string;
 };
 
-export type FetchFunction = (
-  subUrl: string,
-  args: RequestInit
-) => Promise<Response>;
+export type FetchFunction = <T, U>(subUrl: string, args: RequestInit) => Promise<T | U>;
+
+export type BasicErrorReponse = {
+  message: string;
+};
