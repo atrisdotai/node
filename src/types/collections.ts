@@ -21,11 +21,11 @@ export interface CreateCollection {
   name: string;
   symbol: string;
   description: string;
-  subtype: string;
-  pricingModel: string;
-  price: number;
-  infiniteSupply: boolean;
-  maxSupply: number;
+  subtype?: "numbered_pass" | "static_pass";
+  pricingModel?: "pay_once" | "free";
+  price?: number;
+  infiniteSupply?: boolean;
+  maxSupply?: number;
 }
 
 export interface GetCollections {

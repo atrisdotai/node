@@ -41,7 +41,7 @@ export class Collections extends Base {
    * @returns A list of collections by ID
    */
 
-  async getById(id: string) {
+  async get(id: string) {
     const response = this.fetchFunction<Collection, BasicErrorReponse>(`/collections/${id}`, {
       method: 'GET',
     });
@@ -52,7 +52,7 @@ export class Collections extends Base {
    * @returns A list of collections specified user has launched.
    */
 
-  async getByHolders(id: string) {
+  async holders(id: string) {
     const response = this.fetchFunction<Holders, BasicErrorReponse>(`/collections${id}/holders`, {
       method: 'GET',
     });
