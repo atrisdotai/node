@@ -37,18 +37,28 @@ const comet = new Comet({
   token: "********************"
 });
 
-const usage = await comet.usage.get();
-if (usage.message) {
-  throw new Error("Uh oh! Something happend")
-}
+const collection = await commet.collections.create({
+  backgroundUpload: fs.createReadStream("./background.png"),
+  name: "string",
+  symbol: "string",
+  description: "string",
+  subtype: "string",
+  pricingModel: "string",
+  price: 0,
+  infiniteSupply: true,
+  maxSupply: 0,
+});
 
-console.log(usage);
+if ("message" in collection) {
+  console.log(collection.message); // Error Message
+}
+console.log(collection);
 ```
 
 ## Support
 
 New features and bug fixes are released on the latest major version of the `comet` package. If you are on an older major version, we recommend that you upgrade to the latest in order to use the new features and bug fixes including those for security vulnerabilities. Older major versions of the package will continue to be available for use, but will not be receiving any updates.
 
+## Credit
 
-## Credit 
 The following README.md was heavily inspired by Stripe's Node.js library README.md. They do things right over there.
