@@ -135,7 +135,3 @@ New features and bug fixes are released on the latest major version of the `come
 ## Credit
 
 The following README.md was heavily inspired by Stripe's Node.js library README.md. They do things right over there.
-
-```
-
-```
