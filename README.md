@@ -16,11 +16,11 @@ Node 12 or higher.
 Install the package with:
 
 ```sh
-npm install comet-js --save
+npm install @comet-labs/node --save
 # or
-yarn add comet-js
+yarn add @comet-labs/node
 # or
-pnpm add comet-js
+pnpm add @comet-labs/node
 ```
 
 ## Usage
@@ -30,7 +30,7 @@ available on the Comet Dashboard, labeled as "Comet API key".
 
 <!-- prettier-ignore -->
 ```js
-import CometSDK from 'comet-js';
+import CometSDK from '@comet-labs/node';
 
 const comet = new CometSDK({
   version: "v1", // Optional
