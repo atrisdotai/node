@@ -19,11 +19,15 @@ export interface AirdropGetResponse {
   count: number;
 }
 
+// SUCCEEDED, IN_PROGRESS, FAILED, and FAILED:NORETRY
 export interface Statuses {
-  SUCCEEDED: Succeeded[];
+  SUCCEEDED?: StatusIndividual[];
+  IN_PROGRESS?: StatusIndividual[];
+  FAILED?: StatusIndividual[];
+  'FAILED:NORETRY'?: StatusIndividual[];
 }
 
-export interface Succeeded {
+export interface StatusIndividual {
   taskId: string;
   CometUserId?: string;
   address: string;
